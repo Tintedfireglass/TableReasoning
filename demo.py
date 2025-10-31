@@ -1,8 +1,8 @@
 from tabular_ai_agent import TabularAIAgent
 
 # Sample demo to run the pipeline
-api_key = "ENTER_API_KEY_HERE"
-agent = TabularAIAgent(api_key, model='gpt-4')
+api_key = "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"
+agent = TabularAIAgent(api_key, model='qwen/qwen3-coder:free')
 
 html_content = '''
 <div class='div-table'>
