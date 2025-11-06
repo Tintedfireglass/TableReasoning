@@ -760,6 +760,7 @@ class EnhancedTabularAIAgent:
             filters=[],
             reasoning="Using fallback plan"
         )
+        return query_plan
 
 
     def generate_advanced_code(self, query_plan: QueryPlan, schema: MultiTableSchema,
