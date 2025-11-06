@@ -1,7 +1,7 @@
 from tabular_ai_agent import EnhancedTabularAIAgent 
 
 # Sample demo to run the multi-table pipeline
-api_key = "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"
+api_key = "<API_KEY>"
 agent = EnhancedTabularAIAgent(api_key, model='qwen/qwen3-coder:free') 
 
 html_content = '''
