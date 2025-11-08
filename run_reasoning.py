@@ -2,11 +2,12 @@ import sys
 from pathlib import Path
 from tabular_ai_agent import EnhancedTabularAIAgent
 if len(sys.argv) < 4:
-    print("Usage: python idk.py <html_file> <api_key> <model_name>")
+    print("Usage: python idk.py <html_file> <api_key> <model_name> [query]")
     sys.exit(1)
 html_path = Path(sys.argv[1])
 api_key = sys.argv[2]
 model_name = sys.argv[3]
+query = sys.argv[4] if len(sys.argv) > 4 else 'Make any appropriate analysis.'
 if not html_path.exists():
     print(f"HTML file not found: {html_path}")
     sys.exit(1)
@@ -14,7 +15,7 @@ with open(html_path, "r") as f:
     html_content = f.read()
 # print(f"model: {model_name}")
 agent = EnhancedTabularAIAgent(api_key, model=model_name)
-query = 'Calculate the total revenue for each product across all quarters by joining the sales and price tables. Then determine which product had the highest revenue growth rate from Q1 to Q3.'
+# query = 'Calculate the total revenue for each product across all quarters by joining the sales and price tables. Then determine which product had the highest revenue growth rate from Q1 to Q3.'
 result = agent.process_query(query, html_content)
 print('Answer:', result.final_answer)
 print('Confidence:', result.confidence_score)
