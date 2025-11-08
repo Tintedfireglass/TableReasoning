@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 from tabular_ai_agent import EnhancedTabularAIAgent
 if len(sys.argv) < 4:
-    print("Usage: python idk.py <html_file> <api_key> <model_name> [query]")
+    print("Usage: python run_reasoning.py <html_file> <api_key> <model_name> [query]")
     sys.exit(1)
 html_path = Path(sys.argv[1])
 api_key = sys.argv[2]
